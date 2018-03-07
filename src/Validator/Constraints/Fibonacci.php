@@ -37,9 +37,9 @@ class Fibonacci implements ConstraintInterface
 	protected function getNumbers() : array
 	{
 		if (!isset($this->numbers))	{
-			for ($i = 1; $i <= self::COMPUTED_COUNT + 1; $i++) {
-				if ($i < 3) {
-					$this->numbers[] = $i;
+			for ($i = 0; $i < self::COMPUTED_COUNT; $i++) {
+				if ($i < 2) {
+					$this->numbers[] = 1;
 				}
 				else {
 					$this->numbers[] = $this->numbers[count($this->numbers) - 1] +
