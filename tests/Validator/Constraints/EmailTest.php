@@ -13,7 +13,7 @@ class EmailTest extends TestCase
 		];
 
 		foreach ($pairs as $email => $result) {
-			$constraint = new Email($regExp);
+			$constraint = new Email;
 			$this->assertEquals($constraint->validate($email), $result);
 		}
 	}

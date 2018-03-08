@@ -6,7 +6,7 @@ use Validator\Constraints;
 
 class ValidatorTest extends TestCase
 {
-	public function testSeveralConstrainsMatchAll()
+	public function testSeveralConstraintsMatchAll()
 	{
 		$validator = new Validator;
 		$result = $validator->validate('email@yandex.ru', [
@@ -17,7 +17,7 @@ class ValidatorTest extends TestCase
 		$this->assertTrue($result->isOk());
 	}
 
-	public function testSeveralConstrainsNotMatch()
+	public function testSeveralConstraintsNotMatch()
 	{
 		$validator = new Validator;
 		$result = $validator->validate(4, [
