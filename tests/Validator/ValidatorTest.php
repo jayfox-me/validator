@@ -20,12 +20,13 @@ class ValidatorTest extends TestCase
 	public function testSeveralConstraintsNotMatch()
 	{
 		$validator = new Validator;
+		$f = new Constraints\Fibonacci;
 		$result = $validator->validate(4, [
 			new Constraints\RegExp("/[0-9]+/"),
-			new Constraints\Fibonacci
+			$f
 		]);
 
 		$this->assertFalse($result->isOk());
-		$this->assertEquals(count($result->getErrors()), 1);
+		$this->assertEquals($result->getErrors(), [$f->getMessage()]);
 	}
 }
